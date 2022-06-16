@@ -1,0 +1,92 @@
+/*asterísco é seletor universal, seleciona todos os elementos*/
+	/*Mesmo usando o link do CSS reset no HTML, é bom resetar algumas coisas aqui.*/
+	/*ex. para ajustar os espaços entre os parágrafos e a imagem deste container uso margin: 0;*/
+	/*tira todos os espaços de todas as direções cima baixo direita esquerda, zera tudo, para limpar e eu configurar*/
+	/*Após zerar essa margem aqui no seletor *, vou no seletor dos parágrafos, h1, ... para configurar ao meu modo sem interferências de valores prévios*/
+*{
+	margin: 0; 
+	box-sizing: border-box; /*Já inclui o padding total aqui no tamanho máximo do elemento diferente do "content"*/
+
+}
+
+body {
+	background: black;
+	color:  white;
+	text-align: center; /*centraliza o body*/
+	font-family: sans-serif;
+}
+
+img {
+	width: 30%; /*diminui o tamanho da imagem em unidade de medida relativa, proporcional à tela*/
+}
+
+#container {
+	margin-top: 100px; /*espaço da caixa container para a tela cima. Nossa altura de tela deve ser de 700px ao todo*/
+	margin-bottom: 20px;
+	width: 80% /*limite da caixa, é de 80% da largura da página/tela, espaço que seus itens podem ocupar, Percentual=>unidade de medida relativa=flexível*/;
+	max-width: 400px; /*largura máxima que vai ocupar na tela, e width: 80% é o mínimo sempre 80% da tela*/
+	margin-right: auto; /*Poderia juntar margin right e left => margin-inline:  auto;*/
+	margin-left: auto;/*margin-X: auto; calcula automático como preencher a tela nas laterais*/
+	/*border: 2px solid red; /*Code apenas p/ ensinar e visualizar a caixa -> 3 valores => espessura, tipo(poderia ser dashed, dotted..), cor*/
+
+}
+
+h1 {
+	margin-top: 40px; /*margem a cima do seletor - espaço entre o h1 e a imagem acima dele*/
+	margin-bottom: 10px; /*margem a baixo do seletor - espaço entre o h1 e o parágrafo abaixo dele*/
+	opacity: 0.9;/*vai granular do 0(+fraco) ao 1(+forte) até chegar em 100% da cor*/
+
+}
+
+h2 {
+	margin-bottom: 10px;
+	opacity: 0.9;
+}
+
+p {
+	margin-bottom: 40px; /*margem abaixo do parágrafo para o botão*/
+	opacity: 0.7;
+}
+
+input, button {
+	display: block; /*display significa visualização. Inline=um ao lado do outro. block=uma abaixo do outro, cada um preenche toda a linha*/
+	width: 100%; /*botão com 100% de largura da caixa, está dentro do container, sempre bom olhar dentro de onde estão. Detalhe, esses 100% equivalem aos 400px máximos da caixa*/
+	padding: 20px; /*Preenchimento em inglês.Preencho com pixels. Qndo coloco só padding estou usando o atalho/shorthand, mexendo em todas as suas direções.*/
+	font-size: 20px;
+	border-radius: 4px; /*arredonda borda*/
+}
+
+input {
+	margin-bottom: 20px;
+
+
+}
+
+button {
+	border: none; /*quando quero sumir com algo, posso aplicar para vários elementos. Sumir com a borda*/
+	background-color: blueviolet;
+	color: white;
+	transition: filter .2s; /*Transition->defino a propriedade aplicada (filter, transição aplicada qndo ativa o filter) e o tempo de transição da mudança do :hover no elemento onde ele atua, aqui no button.*/
+
+}
+
+/*pseudo-class :hover -> Sempre que passar o mouse por cima fazer {}*/
+button:hover {
+	filter: brightness(1.2); /*crtl + espaço -> mostra as opções do filter. No caso dei um brilho ao passar o mouse.*/
+	cursor: pointer; /*propriedade usada para transformar o cursor em mão ao passar o mouse por cima do botão*/
+}
+
+#resposta{
+	margin-top: 30px;
+
+	transition: opacity 1s; /*tornando,  no elemento mexido, a transição de opacidade definida no JS para a resposta mais suave.*/
+
+}
+
+#resposta div{
+	font-size: 16px;
+	font-weight: normal;
+	opacity: 0.9;
+	margin-bottom: 10px;
+
+}
